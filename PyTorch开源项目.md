@@ -1,0 +1,29 @@
+PyTorch开源项目
+
+数据科学与工程学院 朱梦霞 51195100046
+
+PyTorch是torch的python版本，是由Facebook开源的神经网络框架，专门针对GPU加速的深度神经网络（DNN）编程。Torch是一个经典的对多维矩阵数据进行操作的张量（tensor）库，在机器学习与深度学习中得到广泛应用。与TensorFlow的静态计算图不同，PyTorch的计算图是动态的，可以根据计算需要实时改变计算图。由于Torch语言采用Lua，导致在国内一直很小众，PyTorch出现后，作为经典机器学习库Torch的端口，PyTorch为Python语言使用者提供了舒适的写代码选择。
+
+![image-20191224175046021](/Users/chenbei/Library/Application Support/typora-user-images/image-20191224175046021.png)
+
+图1 Torch与PyTorch对比图
+
+官方认为，PyTorch与Torch最大的区别就是PyTorch重新设计了model模型和intermediate中间变量的关系，在PyTorch中所有计算的中间变量都存在于计算图中，所有的model都可以共享中间变量。而在Torch中的中间变量则在每一个模块中，想要调用其他模块的参数就必须首先复制这个模块然后再调用。
+
+PyTorch采用python语言接口来实现编程，而Torch是采用lua语言， Lua相当于一个小型加强版的C，支持类和面向对象，运行效率极高，与C语言结合“特别默契”，也就是说在Lua中使用C语言非常容易也很舒服。
+
+因此，Torch是采用C语言作为底层，以Lua语言为接口的深度学习库。而PyTorch其实也是主要采用C语言为接口，另外除了C语言那还有C++，因为PyTorch吸收结合了caffe2，进行了很多代码合并，现在PyTorch的底层虽然大部分还是C语言，但是接口什么的也逐渐向C++过渡。
+
+目前来看，两者的底层库的C语言部分区别不大，尽管PyTorch使用了C++接口，但是由于代码的兼容性，使用Torch拓展的底层代码在PyTorch中照样可以编译使用。
+
+PyTorch在编写模型的时候最大的特点就是利用autograd技术来实现自动求导，也就是不需要我们再去麻烦地写一些反向的计算函数，这点上继承了Torch。
+
+PyTorch框架在如今的机器学习与深度学习中应用得越来越多，很多人认为PyTorch相比于TensorFlow来说使用起来要顺手很多。PyTorch的设计追求最少的封装，不像TensorFlow中充斥着session、graph、operation、name_scope、variable、tensor、layer等全新的概念。PyTorch的设计遵循tensor、variable和module三个层次分别代表高维数组（张量）、自动求导（变量）和神经网络（层/模块），而且这三个抽象之间联系紧密，可以同时进行修改和操作。PyTorch的源码只有TensorFlow的十分之一左右，更少的抽象、更直观的设计使得PyTorch的源码十分易于阅读。PyTorch具有良好的灵活性，同样的算法，使用PyTorch实现比其他框架实现来的更快。
+
+PyTorch中API的设计和模块的接口都和Torch高度一致，它的设计符合人们的思维，让用户尽可能地专注于实现自己的想法，而不用考虑太多关于框架本身的束缚。而TensorFlow中就有很多框架的限制，导致代码复杂，晦涩难懂。
+
+PyTorch和TensorFlow采用不同的计算图实现，TensorFlow使用静态图机制，先预定义再使用，PyTorch使用动态图机制，运行时进行动态定义。PyTorch具有丰富的工具和库，研究人员和开发人员建立了丰富的工具和库生态系统，用于扩展PyTorch并支持其从计算机视觉到强化学习等领域的开发。
+
+在使用Python做神经网络实验时，使用PyTorch构建神经网络，结构清晰，代码易于理解，而使用TensorFlow实现的代码在可读性与PyTorch相比要差很多。
+
+PyTorch的发布周期为90天，作为一个社区驱动的项目，许多熟练的工程师和研究人员对该项目做出了很大的贡献，作者亲自维护论坛，供用户交流和请教问题，同时Facebook人工智能研究院也对PyTorch提供了强力支持，确保PyTorch获得持续的开发更新，不至于像许多由个人开发的框架那样昙花一现。在项目的README中对于项目PR的提交要求等也有做出提示，方便刚关注到项目的参与者知晓在PyTorch社区中做贡献的注意事项。
