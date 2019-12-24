@@ -4,10 +4,6 @@ PyTorch开源项目
 
 PyTorch是torch的python版本，是由Facebook开源的神经网络框架，专门针对GPU加速的深度神经网络（DNN）编程。Torch是一个经典的对多维矩阵数据进行操作的张量（tensor）库，在机器学习与深度学习中得到广泛应用。与TensorFlow的静态计算图不同，PyTorch的计算图是动态的，可以根据计算需要实时改变计算图。由于Torch语言采用Lua，导致在国内一直很小众，PyTorch出现后，作为经典机器学习库Torch的端口，PyTorch为Python语言使用者提供了舒适的写代码选择。
 
-![image-20191224175046021](/Users/chenbei/Library/Application Support/typora-user-images/image-20191224175046021.png)
-
-图1 Torch与PyTorch对比图
-
 官方认为，PyTorch与Torch最大的区别就是PyTorch重新设计了model模型和intermediate中间变量的关系，在PyTorch中所有计算的中间变量都存在于计算图中，所有的model都可以共享中间变量。而在Torch中的中间变量则在每一个模块中，想要调用其他模块的参数就必须首先复制这个模块然后再调用。
 
 PyTorch采用python语言接口来实现编程，而Torch是采用lua语言， Lua相当于一个小型加强版的C，支持类和面向对象，运行效率极高，与C语言结合“特别默契”，也就是说在Lua中使用C语言非常容易也很舒服。
